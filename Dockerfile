@@ -15,5 +15,7 @@ RUN npm install react-scripts@1.1.1 -g --silent
 
 COPY . /usr/src/app/
 
+EXPOSE 3000
+
 # start app
 CMD ["npm", "start"]

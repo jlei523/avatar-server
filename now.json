@@ -1,0 +1,11 @@
+{
+  "alias": "medtally-avatars",
+  "name": "medtally-avatars",
+  "scale": {
+    "sfo1": {
+      "min": 1,
+      "max": 1
+    }
+  },
+  "version": 1
+}
