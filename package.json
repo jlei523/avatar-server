@@ -9,7 +9,7 @@
     "deploy": "now && now alias"
   },
   "dependencies": {
-    "avataaars": "^1.1.0",
+    "avatars-background-color": "https://github.com/jlei523/avatars/tarball/master",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
