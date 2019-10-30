@@ -1,31 +1,24 @@
-This is a modified version of gkoberger's avatar server.
+This is a modified version of gkoberger's avataaars server: https://github.com/gkoberger/avataaars
+
+Changes
+
+* Only supports SVGs, no PNGs. If you want PNG support, you can convert the SVGs to PNGs.
+* Added endpoint to generate random avatars
+* Random avatars are optimized. IE. Girls won't have beards. Hair and beard colors are more likely to match.
+
+See the sign up folow on [Medtally.com](https://medtally.com) for an example.
 
 
-
-
-
-
+===========
 
 This renders [Avataaars](https://github.com/fangpenlin/avataaars) in a way that can be embedded!
 
 Here's some example URLs:
 
-    https://avataaars.io/?hairColor=BrownDark&clotheType=Hoodie&avatarStyle=Circle
-    https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Circle&clotheType=Hoodie&eyeType=EyeRoll&eyebrowType=UnibrowNatural&facialHairType=BeardLight&hairColor=Black&mouthType=Eating&skinColor=Yellow&topType=LongHairShavedSides
-    https://avataaars.io/?accessoriesType=Blank&avatarStyle=Circle&clotheColor=Black&clotheType=GraphicShirt&eyeType=Close&eyebrowType=Default&facialHairColor=BlondeGolden&facialHairType=Blank&hairColor=PastelPink&mouthType=Sad&skinColor=Tanned&topType=Hat
+    https://localhost:3006/?hairColor=BrownDark&clotheType=Hoodie&avatarStyle=Circle
+    https://localhost:3006/?accessoriesType=Prescription01&avatarStyle=Circle&clotheType=Hoodie&eyeType=EyeRoll&eyebrowType=UnibrowNatural&facialHairType=BeardLight&hairColor=Black&mouthType=Eating&skinColor=Yellow&topType=LongHairShavedSides
+    https://localhost:3006/?accessoriesType=Blank&avatarStyle=Circle&clotheColor=Black&clotheType=GraphicShirt&eyeType=Close&eyebrowType=Default&facialHairColor=BlondeGolden&facialHairType=Blank&hairColor=PastelPink&mouthType=Sad&skinColor=Tanned&topType=Hat
 
-
-If you want a PNG, you can add `/png` to the URL like this:
-
-    https://avataaars.io/png?hairColor=BrownDark&clotheType=Hoodie&avatarStyle=Circle
-
-And you can resize the PNG using `/png/{width}`, like this:
-
-    https://avataaars.io/png/2000?hairColor=BrownDark&clotheType=Hoodie&avatarStyle=Circle
-
-You can build your query strings here:
-
-    https://getavataaars.com/
 
 DEVELOPMENT
 ===========
