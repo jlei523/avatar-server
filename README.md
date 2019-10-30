@@ -1,3 +1,11 @@
+This is a modified version of gkoberger's avatar server.
+
+
+
+
+
+
+
 This renders [Avataaars](https://github.com/fangpenlin/avataaars) in a way that can be embedded!
 
 Here's some example URLs:
