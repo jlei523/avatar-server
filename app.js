@@ -5,10 +5,12 @@ var cors = require("cors");
 const { performance } = require("perf_hooks");
 var compression = require("compression");
 
+const generateRandomSVG = require("./randomGenerator");
+
 // React Components
 import React from "react";
 import RDS from "react-dom/server";
-import Avataaars from "avataaars";
+import Avataaars from "avatars-background-color";
 
 const app = express();
 app.use(cors());
@@ -29,143 +31,21 @@ app.get("/", async (req, res) => {
   res.end(appString);
 });
 
-app.get("/ten", async (req, res) => {
+app.get("/svg/:count", async (req, res) => {
   const t0 = performance.now(); //start timer
 
-  const appString = RDS.renderToString(<Avataaars {...req.query} />);
+  const numSVGs = req.params.count || 9;
+  const svgs = [];
 
-  const appString2 = RDS.renderToString(
-    <Avataaars
-      avatarStyle="Circle"
-      topType="WinterHat4"
-      accessoriesType="Round"
-      hatColor="Blue03"
-      facialHairType="Blank"
-      clotheType="GraphicShirt"
-      clotheColor="PastelBlue"
-      graphicType="Cumbia"
-      eyeType="Squint"
-      eyebrowType="AngryNatural"
-      mouthType="Disbelief"
-      skinColor="Tanned"
-    />
-  );
-  const appString3 = RDS.renderToString(
-    <Avataaars
-      avatarStyle="Circle"
-      topType="LongHairCurly"
-      accessoriesType="Prescription02"
-      hairColor="Platinum"
-      facialHairType="BeardMedium"
-      facialHairColor="Blonde"
-      clotheType="CollarSweater"
-      clotheColor="Gray01"
-      eyeType="Squint"
-      eyebrowType="RaisedExcited"
-      mouthType="Grimace"
-      skinColor="Light"
-    />
-  );
-  const appString4 = RDS.renderToString(
-    <Avataaars
-      avatarStyle="Circle"
-      topType="LongHairStraight2"
-      accessoriesType="Wayfarers"
-      hairColor="Platinum"
-      facialHairType="Blank"
-      facialHairColor="Platinum"
-      clotheType="BlazerSweater"
-      clotheColor="PastelOrange"
-      eyeType="Surprised"
-      eyebrowType="UpDown"
-      mouthType="Tongue"
-      skinColor="Pale"
-    />
-  );
-  const appString5 = RDS.renderToString(
-    <Avataaars
-      avatarStyle="Circle"
-      topType="Hijab"
-      accessoriesType="Prescription02"
-      hatColor="Blue03"
-      hairColor="PastelPink"
-      facialHairType="MoustacheFancy"
-      facialHairColor="BlondeGolden"
-      clotheType="ShirtVNeck"
-      clotheColor="PastelBlue"
-      eyeType="Wink"
-      eyebrowType="SadConcerned"
-      mouthType="Smile"
-      skinColor="Pale"
-    />
-  );
-  const appString6 = RDS.renderToString(
-    <Avataaars
-      avatarStyle="Circle"
-      topType="LongHairShavedSides"
-      accessoriesType="Prescription02"
-      hairColor="SilverGray"
-      facialHairType="BeardMagestic"
-      facialHairColor="Auburn"
-      clotheType="ShirtVNeck"
-      clotheColor="Red"
-      eyeType="Hearts"
-      eyebrowType="AngryNatural"
-      mouthType="Eating"
-      skinColor="Yellow"
-    />
-  );
-  const appString7 = RDS.renderToString(
-    <Avataaars
-      avatarStyle="Circle"
-      topType="LongHairBun"
-      accessoriesType="Round"
-      hairColor="Brown"
-      facialHairType="BeardMedium"
-      facialHairColor="Platinum"
-      clotheType="BlazerSweater"
-      clotheColor="Gray02"
-      eyeType="Squint"
-      eyebrowType="SadConcernedNatural"
-      mouthType="Default"
-      skinColor="Tanned"
-    />
-  );
-  const appString8 = RDS.renderToString(
-    <Avataaars
-      avatarStyle="Circle"
-      topType="ShortHairDreads02"
-      accessoriesType="Round"
-      hairColor="Brown"
-      facialHairType="BeardLight"
-      facialHairColor="Auburn"
-      clotheType="ShirtCrewNeck"
-      clotheColor="Blue02"
-      eyeType="Happy"
-      eyebrowType="UpDown"
-      mouthType="Concerned"
-      skinColor="Light"
-    />
-  );
+  for (let i = 0; i < numSVGs; i++) {
+    const randomSVGObj = generateRandomSVG();
+    svgs.push(RDS.renderToString(<Avataaars {...randomSVGObj} />));
+  }
 
   const t1 = performance.now(); //start timer
   const responseTime = t1 - t0; //responsetime in ms
 
-  console.log(responseTime);
-
-  console.log("get /ten");
-  const obj = [
-    appString,
-    appString2,
-    appString3,
-    appString4,
-    appString5,
-    appString6,
-    appString7,
-    appString8
-  ];
-
-  res.json(obj);
+  res.json(svgs);
 });
 
 // app.get("/png/:width?", async (req, res) => {
