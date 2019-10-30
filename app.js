@@ -48,21 +48,6 @@ app.get("/svg/:count", async (req, res) => {
   res.json(svgs);
 });
 
-// app.get("/png/:width?", async (req, res) => {
-//   const appString = RDS.renderToString(<Avataaars {...req.query} />);
-
-//   const png = await convert(appString, {
-//     width: parseInt(req.params.width || 500, 10),
-//     puppeteer: {
-//       args: ["--no-sandbox", "--disable-setuid-sandbox"]
-//     }
-//   });
-
-//   res.set("Content-Type", "image/png");
-//   res.end(png);
-// });
-
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   let err = new Error("Not Found");
   err.status = 404;
