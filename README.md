@@ -5,7 +5,7 @@ This is a modified version of gkoberger's avataaars server: https://github.com/g
 * Added endpoint to generate random avatars
 * Random avatars are optimized. IE. Girls won't have beards. Hair and beard colors are more likely to match.
 * Added different background colors
-* Only supports SVGs, no PNGs. If you want PNG support, you can convert the SVGs to PNGs.
+* Only supports SVGs, no PNGs.
 
 
 See the sign up folow on [Medtally.com](https://medtally.com) for an example.
