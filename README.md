@@ -8,7 +8,7 @@ This is a modified version of gkoberger's avataaars server: https://github.com/g
 * Only supports SVGs, no PNGs.
 
 
-See the sign up folow on [Medtally.com](https://medtally.com) and [getavatars.app](https://getavatars.app for examples.
+See the sign up folow on [Medtally.com](https://medtally.com) and [getavatars.app](https://getavatars.app) for examples.
 
 
 ===========
